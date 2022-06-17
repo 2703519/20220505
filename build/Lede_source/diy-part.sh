@@ -36,7 +36,7 @@ EOF
 
 
 # 编译多主题时,设置固件默认主题（可自行修改您要的,主题名称必须对,比如下面代码的[argon],和肯定编译了该主题,要不然进不了后台）
-#sed -i "/exit 0/i\uci set luci.main.mediaurlbase='/luci-static/argon' && uci commit luci" "$FIN_PATH"
+#sed -i "/exit 0/i\uci set luci.main.mediaurlbase='/luci-static/netgear' && uci commit luci" "$FIN_PATH"
 
 
 # 增加个性名字 ${Author} 默认为你的github帐号,修改时候把 ${Author} 替换成你要的
