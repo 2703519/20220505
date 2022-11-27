@@ -23,21 +23,21 @@ uci set system.@system[0].hostname='Hello'              # 修改主机名称为O
 uci set ttyd.@ttyd[0].command='/bin/login -f root'           # 设置ttyd免帐号登录（去掉uci前面的#生效）
 
 # 如果有用IPV6的话,可以使用以下命令创建IPV6客户端(LAN口)（去掉全部代码uci前面#号生效）
-uci set network.ipv6=interface
-uci set network.ipv6.proto='dhcpv6'
-uci set network.ipv6.ifname='@lan'
-uci set network.ipv6.reqaddress='try'
-uci set network.ipv6.reqprefix='auto'
-uci set firewall.@zone[0].network='lan ipv6'
+#uci set network.ipv6=interface
+#uci set network.ipv6.proto='dhcpv6'
+#uci set network.ipv6.ifname='@lan'
+#uci set network.ipv6.reqaddress='try'
+#uci set network.ipv6.reqprefix='auto'
+#uci set firewall.@zone[0].network='lan ipv6'
 EOF
 
 
 # 把bootstrap替换成argon为源码必选主题（可自行修改您要的,主题名称必须对,比如下面代码的[argon],源码内必须有该主题,要不然编译失败）
-sed -i "s/bootstrap/netgear/ig" feeds/luci/collections/luci/Makefile
+sed -i "s/bootstrap/mcat/ig" feeds/luci/collections/luci/Makefile
 
 
 # 编译多主题时,设置固件默认主题（可自行修改您要的,主题名称必须对,比如下面代码的[argon],和肯定编译了该主题,要不然进不了后台）
-sed -i "/exit 0/i\uci set luci.main.mediaurlbase='/luci-static/netgear' && uci commit luci" "${FIN_PATH}"
+sed -i "/exit 0/i\uci set luci.main.mediaurlbase='/luci-static/mcat' && uci commit luci" "${FIN_PATH}"
 
 
 # 增加个性名字 ${Author} 默认为你的github帐号,修改时候把 ${Author} 替换成你要的
