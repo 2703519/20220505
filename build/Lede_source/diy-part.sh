@@ -6,7 +6,7 @@
 # 修改IP项的EOF于EOF之间请不要插入其他扩展代码，可以删除或注释里面原本的代码
 
 svn co https://github.com/kenzok8/openwrt-packages/trunk/luci-theme-mcat package/luci-theme-mcat
-cp -af /build/softethervpn5 /openwrt/feeds/packages/net/softethervpn5
+
 
 cat >$NETIP <<-EOF
 uci set network.lan.ipaddr='192.168.91.1'                      # IPv4 地址(openwrt后台地址)
