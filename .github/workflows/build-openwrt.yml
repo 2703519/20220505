@@ -122,6 +122,8 @@ jobs:
       run: |
         cd openwrt
         source ${BUILD_PATH}/common.sh && Diy_menu
+        cp -Rf /softethervpn5 /openwrt/feeds/packages/net/softethervpn5
+        
         
     - name: SSH远程连接（制作.config配置文件）
       if: env.SSH_ACTIONS == 'true' || (github.event.inputs.ssh == 'ssh')
