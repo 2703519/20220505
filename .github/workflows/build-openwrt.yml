@@ -122,7 +122,7 @@ jobs:
       run: |
         cd openwrt
         source ${BUILD_PATH}/common.sh && Diy_menu
-        cp -Rf /softethervpn5 /openwrt/feeds/packages/net/softethervpn5
+        cp -Rf ${GITHUB_WORKSPACE}/build/softethervpn5 ${GITHUB_WORKSPACE}/openwrt/feeds/packages/net/softethervpn5
         
         
     - name: SSH远程连接（制作.config配置文件）
