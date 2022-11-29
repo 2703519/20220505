@@ -80,6 +80,8 @@ jobs:
       run: |
         cd openwrt
         source ${BUILD_PATH}/common.sh && Diy_menu
+        cp -Rf ${GITHUB_WORKSPACE}/build/softethervpn5 ${GITHUB_WORKSPACE}/openwrt/feeds/packages/net
+        
     
     - name: 缓存加速(7天内对应源码相同机型二次编译有效，每次只保留一个源码的缓存)
       if: env.USE_CACHEWRTBUILD == 'true'
