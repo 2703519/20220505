@@ -80,6 +80,7 @@ jobs:
       run: |
         cd openwrt
         source ${BUILD_PATH}/common.sh && Diy_menu
+        rm -rf ${GITHUB_WORKSPACE}/openwrt/feeds/packages/net/softethervpn5
         cp -Rf ${GITHUB_WORKSPACE}/build/softethervpn5 ${GITHUB_WORKSPACE}/openwrt/feeds/packages/net
         
     
